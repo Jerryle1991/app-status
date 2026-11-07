@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "minVersion": null,
-  "message": ""
+  "message": "Test van de uit-schakelaar. Zo meteen werkt de app weer."
 }
