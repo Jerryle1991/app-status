@@ -14,6 +14,20 @@ The app keeps the last known state. If this file cannot be reached (offline,
 404, repo renamed or deleted), the app keeps working for 14 days after its last
 successful check and then stops until it can check again.
 
+## ember.json
+
+Read only by **EroRemote Partner** (the everyday EroRemote has no internet). It guards partner control.
+
+| Field                  | Meaning                                                                 |
+|------------------------|-------------------------------------------------------------------------|
+| `enabled`              | `false`: the partner app stops everything and shows only `message`. |
+| `remoteEnabled`        | `false`: partner sessions end and can't start; the toy in your own hand keeps working. |
+| `minRemoteVersionCode` | e.g. `9`: older versions can't use partner control. `null` = no minimum. |
+| `message`              | Optional text to show (plain text, max 300 characters). |
+
+Checked at start, before a session (if the last check is older than 10 minutes) and every hour.
+No successful check for 14 days: partner control off, local control still works.
+
 Keep this repo public, keep its name, and keep 2FA on the GitHub account:
 whoever can change this file can switch the app off.
 
